@@ -1,48 +1,10 @@
+{% extends 'cat_main.html' %}
+{% block title %}About{% endblock  %}
+{% block body %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-      <!-- Favicons -->
 
 
-  <link href="{% static "/img/favicon.png"%}" rel="icon">
-  <link href="{% static "/img/apple-touch-icon.png"%}"" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link
-     href="{% static "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"%}"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="  {% static "/vendor/bootstrap/css/bootstrap.min.css"%}" rel="stylesheet">
-  <link href="  {% static "/vendor/icofont/icofont.min.css"%}" rel="stylesheet">
-  <link href="  {% static "/vendor/boxicons/css/boxicons.min.css"%}" rel="stylesheet">
-  <link href="  {% static "/vendor/animate.css/animate.min.css"%}" rel="stylesheet">
-  <link href="  {% static "/vendor/vendor/venobox/venobox.css"%}" rel="stylesheet">
-  <link href="  {% static "/vendor/owl.carousel/assets/owl.carousel.min.css"%}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="{% static "css/style.css"%}" rel="stylesheet">
-  <!-- =======================================================
-  * Template Name: Groovin - v2.1.0
-  * Template URL: https://bootstrapmade.com/groovin-free-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  <link rel="stylesheet" href="{% static "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"%}"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-
-</head>
-<body>
-    
-
-
-    <main id="main">
+    {% comment %} <main id="main"> {% endcomment %}
 
         <!-- ======= About Section ======= -->
         <section id="about" class="about">
@@ -144,5 +106,4 @@
   <!-- Template Main JS File -->
   <script src="{% static "/js/main.js"%}"></script>
 
-</body>
-</html>
+{% endblock  %}

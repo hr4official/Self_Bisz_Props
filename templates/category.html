@@ -1,18 +1,14 @@
+{% extends 'cat_main.html' %}
+{% block title %}Category{% endblock  %}
+{% block body %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>category</title>
+
 
 <link rel="stylesheet" href="{% static "category/css/bootstrap.min.css"%}"><!-- bootstrap-CSS -->
 <link rel="stylesheet" href="{% static "category/css/bootstrap-select.css"%}" ><!-- bootstrap-select-CSS -->
-<link href="{% static "DEMO/css/style.css"%}" rel="stylesheet" type="text/css" media="all" /><!-- style.css -->
-<link rel="stylesheet" href="{% static "category/css/flexslider.css"%}" type="text/css" media="screen" /><!-- flexslider-CSS -->
+<link href="{% static "category/css/style.css"%}" rel="stylesheet" type="text/css" media="all" /><!-- style.css -->
 <link rel="stylesheet" href="{% static "category/css/font-awesome.min.css"%}" /><!-- fontawesome-CSS -->
-<link rel="stylesheet" href="{% static "category/css/menu_sideslide.css"%}" type="text/css" media="all"><!-- Navigation-CSS -->
+<!-- <link rel="stylesheet" href="../static/category/css/style.css"> -->
 <!-- meta tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -35,7 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="container">
                 <div class="col-md-3">
                     <div class="focus-grid w3layouts-boder1">
-                        <a class="btn-8" href="categories.html">
+                        <a class="btn-8" href={% url 'Technology' %}>
                             <div class="focus-border">
                                 <div class="focus-layout">
                                     <div class="focus-image"><i class="fa fa-mobile"></i></div>
@@ -47,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="col-md-3">
                     <div class="focus-grid w3layouts-boder2">	
-                    <a class="btn-8" href="categories.html#parentVerticalTab2">
+                    <a class="btn-8" href={% url 'Electronics_applices' %}>
                         <div class="focus-border">
                             <div class="focus-layout">
                                 <div class="focus-image"><i class="fa fa-laptop"></i></div>
@@ -59,31 +55,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="col-md-3">
                 <div class="focus-grid w3layouts-boder3">
-                    <a class="btn-8" href="categories.html#parentVerticalTab3">
+                    <a class="btn-8" href={% url 'Vehical' %}>
                         <div class="focus-border">
                             <div class="focus-layout">
                                 <div class="focus-image"><i class="fa fa-car"></i></div>
-                                <h4 class="clrchg">Automobile</h4>
+                                <h4 class="clrchg">Vehical</h4>
                             </div>
                         </div>
                     </a>
                 </div>	
                 </div>
-                <div class="col-md-3">
-                <div class="focus-grid w3layouts-boder4">
-                    <a class="btn-8" href="categories.html#parentVerticalTab4">
-                        <div class="focus-border">
-                            <div class="focus-layout">
-                                <div class="focus-image"><i class="fa fa-motorcycle"></i></div>
-                                <h4 class="clrchg">Transportation</h4>
-                            </div>
-                        </div>
-                    </a>
-                </div>	
-                </div>
+
                 <div class="col-md-3">
                 <div class="focus-grid w3layouts-boder5">
-                    <a class="btn-8" href="categories.html#parentVerticalTab5">
+                    <a class="btn-8" href={% url 'Furnitures' %}>
                         <div class="focus-border">
                             <div class="focus-layout">
                                 <div class="focus-image"><i class="fa fa-wheelchair"></i></div>
@@ -93,6 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </a>
                 </div>
                 </div>
+
                 <div class="col-md-3">
                 <div class="focus-grid w3layouts-boder6">
                     <a class="btn-8" href="categories.html#parentVerticalTab6">
@@ -105,6 +91,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </a>
                 </div>	
                 </div>
+              
                 <div class="col-md-3">
                 <div class="focus-grid w3layouts-boder7">
                     <a class="btn-8" href="categories.html#parentVerticalTab7">
@@ -117,9 +104,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </a>
                 </div>	
                 </div>
+               
                 <div class="col-md-3">
                 <div class="focus-grid w3layouts-boder8">
-                    <a class="btn-8" href="categories.html#parentVerticalTab8">
+                    <a class="btn-8" href={% url 'Fashion' %}>
                         <div class="focus-border">
                             <div class="focus-layout">
                                 <div class="focus-image"><i class="fa fa-asterisk"></i></div>
@@ -129,9 +117,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </a>
                 </div>	
                 </div>
+               
                 <div class="col-md-3">
                 <div class="focus-grid w3layouts-boder9">
-                    <a class="btn-8" href="categories.html#parentVerticalTab9">
+                    <a class="btn-8" href={% url 'Kids' %}>
                         <div class="focus-border">
                             <div class="focus-layout">
                                 <div class="focus-image"><i class="fa fa-gamepad"></i></div>
@@ -147,7 +136,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <a class="btn-8" href="categories.html#parentVerticalTab9">
                         <div class="focus-border">
                             <div class="focus-layout">
-                                <div class="focus-image"><img src="/static/img/portfolio/hair.png" alt="" width="80px" height="80px"></div>
+                                <div class="focus-image"><i class= "fa fa-scissors"></i></div>
                                 <!-- <i class="fa fa-gamepad"></i> -->
 
                                 <h4 class="clrchg">Hair-saloon</h4>
@@ -157,33 +146,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>	
                 </div>
 
-                <div class="col-md-3">
-                <div class="focus-grid w3layouts-boder10">
-                    <a class="btn-8" href="categories.html#parentVerticalTab10">
-                        <div class="focus-border">
-                            <div class="focus-layout">
-                                <div class="focus-image"><i class="fa fa-shield"></i></div>
-                                <h4 class="clrchg">Services</h4>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                </div>
-                <div class="col-md-3">
-                <div class="focus-grid w3layouts-boder11">
-                    <a class="btn-8" href="categories.html#parentVerticalTab11">
-                        <div class="focus-border">
-                            <div class="focus-layout">
-                                <div class="focus-image"><i class="fa fa-at"></i></div>
-                                <h4 class="clrchg">Jobs</h4>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                </div>
+               
                 <div class="col-md-3">
                 <div class="focus-grid w3layouts-boder12">
-                    <a class="btn-8" href="categories.html#parentVerticalTab12">
+                    <a class="btn-8" href={% url 'Real_estate' %}>
                         <div class="focus-border">
                             <div class="focus-layout">
                                 <div class="focus-image"><i class="fa fa-home"></i></div>
@@ -200,3 +166,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </body>
 </html>
+
+{% endblock  %}

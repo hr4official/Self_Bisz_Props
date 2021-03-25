@@ -13,7 +13,7 @@
   <!-- Favicons -->
 
 
-  <link href="{% static "/img/favicon.png"%}" rel="icon">
+  <link href="{% static "/img/LOGO2.jpg"%}" rel="icon">
   <link href="{% static "/img/apple-touch-icon.png"%}"" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -48,6 +48,14 @@
       left: -250px;
       height: 100%;
     }
+    .map iframe{
+      width: 1110px;
+      height: 320px;
+      position: relative;
+      top: -26px;
+    }
+
+    
 </style>
 </head>
 
@@ -57,8 +65,9 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 <!-- <img src="/static/img/portfolio/logo.jpg" alt=""> -->
-      <h1 class="logo mr-auto"><img src="/static/img/LOGO2.jpg" alt="" ><a href="index.html"></a></h1>
-      {% comment %} <h1 class="logo mr-auto"><img src="/static/img/portfolio/logo2.jpg" alt="" ><a href="index.html">SBP</a></h1> {% endcomment %}
+{% comment %} {% static "img/LOGO2.JPG"%} {% endcomment %}
+      <h1 class="logo mr-auto"><img src="{% static "img/LOGO2.JPG"%}" alt="" ></h1>
+      <!-- <h1 class="logo mr-auto"><img src="/static/img/portfolio/logo2.jpg" alt="" ><a href="{% url 'index' %}">SBP</a></h1> -->
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="{% static "/img/logo.png"%}" alt="" class="img-fluid"></a>-->
 
@@ -69,15 +78,17 @@
         <ul>
           <li class="active"><a href="{% url 'index' %}">Home</a></li>
 
-          <li class="drop-down"><a href="{% url 'category' %}">Business</a>
+          <li class="drop-down"><a href="{% url 'subcategories' %}">Business</a>
             <ul>
 
-              <li><a href="#">Technology</a></li>
-              <li><a href="#">Retail</a></li>
-              <li><a href="#">Grosary</a></li>
-              <li><a href="#">HANDICRAFT</a></li>
-              <li><a href="#">FOOD PRODUCTION</a></li>
-              <li><a href="#">PHARMCY</a></li>
+              <li><a href="{% url 'Technology' %}">Technology</a></li>
+              <li><a href="{% url 'Vehical' %}">Vehical</a></li>
+              <li><a href="{% url 'Electronics_applices' %}">Electronics-applices</a></li>
+              <li><a href="{% url 'Fashion' %}">Fashion</a></li>
+              <li><a href="{% url 'Furnitures' %}">Furnitures</a></li>
+              <li><a href="{% url 'Kids' %}">Kids</a></li>
+              <li><a href="{% url 'Pets' %}">Pets</a></li>
+              <li><a href="{% url 'Real_estate' %}">Real-estate</a></li>
 
             </ul>
 
@@ -97,8 +108,8 @@
 
           </li>
 
-          <li><a href="Activity">Activity</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="#">Activity</a></li>
+          <li ><a  href={% url 'about' %}>About</a></li>
           <li><a href="{% url 'services' %}">Services</a></li>
 
 
@@ -106,10 +117,13 @@
         </ul>
       </nav><!-- .nav-menu -->
       <a href="#about"  class="get-started-btn scrollto" id="story">Share Your Story</a>
-      <a href="{% url 'login' %}" class="get-started-btn scrollto">Login</a>
-      <a href="{% url 'reg' %}" class="get-started-btn scrollto" >Registration</a>
+      <a href="{% url 'final_log' %}" class="get-started-btn scrollto">Login</a>
+      <a href="{% url 'final_reg' %}" class="get-started-btn scrollto">Registration</a>
+      {% comment %} <a href="https://form.jotform.com/210726122722445" class="get-started-btn scrollto" >Registration</a> {% endcomment %}
+      {% comment %} <a href="{% url 'reg' %}" class="get-started-btn scrollto" >Registration</a> {% endcomment %}
     </div>
     </div>
+  
   </header>
   <!-- End Header -->
 
@@ -230,6 +244,8 @@
       </div>
     </section>
     <!-- End Counts Section -->
+
+    {% comment %} {% include 'category.html' %} {% endcomment %}
 
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients section-bg">
@@ -479,7 +495,7 @@
         <div class="row">
 
           <div class="col-xl-3 col-lg-4 col-md-6">
-            <div class="member">
+            <div class="member" >
 
 
               <img src="{% static "/img/team/dhruv1.png"%}" class="img-fluid" alt="">
@@ -560,91 +576,6 @@
     </section>
     <!-- End Team Section -->
 
-    
-    <!-- ======= Frequently Asked Questions Section ======= -->
-    <section id="faq" class="faq section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Frequently Asked Questions</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-            in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="faq-list">
-          <ul>
-            <li data-aos="fade-up">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapse"
-                href="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-1" class="collapse show" data-parent=".faq-list">
-                <p>
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur
-                  gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2"
-                class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-2" class="collapse" data-parent=".faq-list">
-                <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
-                  donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit
-                  ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-3"
-                class="collapsed">Dolor sit amet consectetur adipiscing elit? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-3" class="collapse" data-parent=".faq-list">
-                <p>
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum
-                  integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt.
-                  Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi
-                  quis
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-4"
-                class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-4" class="collapse" data-parent=".faq-list">
-                <p>
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc
-                  vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus
-                  gravida quis blandit turpis cursus in.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="400">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-5"
-                class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem
-                dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-5" class="collapse" data-parent=".faq-list">
-                <p>
-                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada
-                  nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis
-                  tellus in metus vulputate eu scelerisque.
-                </p>
-              </div>
-            </li>
-
-          </ul>
-        </div>
-
-      </div>
-    </section><!-- End Frequently Asked Questions Section -->
-
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
@@ -660,15 +591,18 @@
             <div class="contact-address">
               <i class="icofont-google-map"></i>
               <h3>Address</h3>
-              <address>Kedarnath, Uttarakhand,NY 246445, India</address>
+            <address>Mota Bajar near Iscon Temple Anand,Gujrat,India
+            </address>
+              
             </div>
           </div>
 
+        
           <div class="col-md-4">
             <div class="contact-phone">
               <i class="icofont-phone"></i>
               <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">+91 01364-233210 / 233388</a></p>
+              <p><a href="tel:+91 8488861415">+91 8488861415</a></p>
             </div>
           </div>
 
@@ -676,14 +610,22 @@
             <div class="contact-email">
               <i class="icofont-envelope"></i>
               <h3>Email</h3>
-              <p><a href="mailto:capital91@gmail.com">capital91@gmail.com</a></p>
+              <p><a href="mailto:SBP09@gmail.com">capital91@gmail.com</a></p>
             </div>
           </div>
 
         </div>
 
+        <div class="map">
+          <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14738.38288659472!2d72.91325373000804!3d22.556812213052893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e4e75a10b0b6d%3A0x2f43132cca7f0299!2sMota%20Bazaar%2C%20Vallabh%20Vidyanagar%2C%20Anand%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1616532736789!5m2!1sen!2sin"  allowfullscreen="" loading="lazy"></iframe>
+            
+
+        </div>
+
+
         <div class="form">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <form action="" method="POST" role="form" class="php-email-form">
+          {% csrf_token %}
             <div class="form-row">
               <div class="col-md-6 form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
@@ -711,7 +653,9 @@
               <div class="error-message"></div>
               <div class="sent-message">Your message has been sent. Thank you!</div>
             </div>
+            
             <div class="text-center"><button type="submit">Send Message</button></div>
+                  {{form.Contact}}
           </form>
         </div>
 
@@ -730,11 +674,10 @@
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
               <h3>SBP</h3>
-              <p>
-                Kedarnath, Uttarakhand, <br>
-                NY 246445, India<br><br>
-                <strong>Phone:</strong> +91 01364-233210 / 233388<br>
-                <strong>Email:</strong> capital91@gmail.com<br>
+              <a href=""><p>
+                Mota Bajar near Iscon Temple Anand,Gujrat,India</a> <br><br>
+                <a href="tel:+91 8488861415"><strong>Phone:</strong> +91 8488861415</a><br>
+                <a href="mailto:SBP09@gmail.com"><strong>Email:</strong> SBP09@gmail.com</a><br>
               </p>
               <div class="social-links mt-3">
                 <a href="https://twitter.com/" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -754,6 +697,7 @@
               <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Services</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href={% url 'faq' %}>FAQ</a></li>
             </ul>
           </div>
 
@@ -772,7 +716,9 @@
             <h4>Our Newsletter</h4>
             <p>#स्वदेशी #स्वदेश_प्रेम #aatamnirbharbharat #आत्मनिर्भरभारत #आत्मनिर्भर #in..</p>
             <form action="" method="post">
+              {% csrf_token %}
               <input type="email" name="email"><input type="submit" value="Subscribe">
+                {{form.Subscribe}}
             </form>
 
           </div>
