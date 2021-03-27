@@ -14,7 +14,8 @@
 <body>
     <h1>Forgot Password</h1>
     <div class="log">
-        <form id="log" action="" method="post">
+        <form id="log" action="" method="POST">
+        {% csrf_token %}
             <img src="{% static "/REG_LOG_FORGOT/images/LOGO2.JPG"%}" alt=""><br><br>
 
             <!-- <div> -->
@@ -26,6 +27,7 @@
                 <!-- <label>Email</label><br> -->
                 <span class="fa fa-envelope"></span>
                 <input type="email" name="email" id="name" placeholder="example@gmail.com" required=""/><br><br>
+                {{ form.Forgot }}
             </div>
             
             <button type="submit" id="sub" value="login">Send</button>

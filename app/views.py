@@ -93,7 +93,7 @@ def FAQ(request):
 
 
 
-@login_required(login_url='final_log')
+# @login_required(login_url='final_log')
 def index(request):
     name = request.user.username
     return render(request, 'index.html', {'username': name})
@@ -108,35 +108,39 @@ def final_reg(request):
     # decy = check_password('12345','pbkdf2_sha256$216000$a3P8F75Ie3ZB$T1x+naAXj/yifcwSEUhvwL4v6eznnvkt3egiFfiK1Ps=')
     # print(decy)
     
-    print(make_password('12345'))
-    print(check_password('123g45','pbkdf2_sha256$216000$a3P8F75Ie3ZB$T1x+naAXj/yifcwSEUhvwL4v6eznnvkt3egiFfiK1Ps='))
-    form = Reg()
-    if request.method == 'POST':
-        form = Reg(request.POST)
-        if form.is_valid():
-            registartion.password = make_password('registartion.password')
-            user.profile.birth_date = form.cleaned_data.get('birth_date')
-            form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, "account was created for" + user)
-        return redirect('final_log')
-    context = {'form': form}
-    return render(request, 'final_reg.html', context)
-
+    # print(make_password('12345'))
+    # print(check_password('123g45','pbkdf2_sha256$216000$a3P8F75Ie3ZB$T1x+naAXj/yifcwSEUhvwL4v6eznnvkt3egiFfiK1Ps='))
+    if request.user.is_authenticated:
+        return('index')
+    else:
+        form = Reg()
+        if request.method == 'POST':
+            form = Reg(request.POST)
+            if form.is_valid():
+            # registartion.password = make_password('registartion.password')
+                # user.profile.birth_date = form.cleaned_data.get('birth_date')
+                form.save()
+                user = form.cleaned_data.get('username')
+                messages.success(request, "account was created for" + user)
+                return redirect('final_log')
+        context = {'form': form}
+        return render(request, 'final_reg.html', context)
 
 def final_log(request):
-    if request.method == "POST":
-
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        registartion = authenticate(request, username=username, password=password)
-
-        if registartion is not None:
-            login(request, registartion)
-            return redirect('index')
-        else:
-            messages.info(request, 'username or password in wrong')
+    if request.user.is_authenticated:
+    	return redirect('index')
+    else:
+        if request.method == "POST":
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            
+            registartion = authenticate(request, username=username, password=password)
+            
+            if registartion is not None:
+                login(request, registartion)
+                return redirect('index')
+            else:
+                messages.info(request, 'username or password in wrong')
     context = {}
     return render(request, 'final_log.html',context)
 

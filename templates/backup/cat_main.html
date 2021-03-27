@@ -109,7 +109,7 @@
         </ul>
       </nav><!-- .nav-menu -->
       <a href="#about"  class="get-started-btn scrollto" id="story">Share Your Story</a>
-      <a href="{% url 'final_login' %}" class="get-started-btn scrollto">Login</a>
+      <a href="{% url 'final_log' %}" class="get-started-btn scrollto">Login</a>
       <a href="{% url 'final_reg' %}" class="get-started-btn scrollto">Registration</a>
       {% comment %} <a href="https://form.jotform.com/210726122722445" class="get-started-btn scrollto" >Registration</a> {% endcomment %}
       {% comment %} <a href="{% url 'reg' %}" class="get-started-btn scrollto" >Registration</a> {% endcomment %}
@@ -122,6 +122,7 @@
   {% block body %}{% endblock  %}
 
   
+
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="footer-top">
@@ -131,11 +132,10 @@
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
               <h3>SBP</h3>
-              <p>
-                Kedarnath, Uttarakhand, <br>
-                NY 246445, India<br><br>
-                <strong>Phone:</strong> +91 01364-233210 / 233388<br>
-                <strong>Email:</strong> capital91@gmail.com<br>
+              <a href=""><p>
+                Mota Bajar near Iscon Temple Anand,Gujrat,India</a> <br><br>
+                <a href="tel:+91 8488861415"><strong>Phone:</strong> +91 8488861415</a><br>
+                <a href="mailto:SBP09@gmail.com"><strong>Email:</strong> SBP09@gmail.com</a><br>
               </p>
               <div class="social-links mt-3">
                 <a href="https://twitter.com/" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -155,6 +155,7 @@
               <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Services</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href={% url 'faq' %}>FAQ</a></li>
             </ul>
           </div>
 
@@ -173,7 +174,9 @@
             <h4>Our Newsletter</h4>
             <p>#स्वदेशी #स्वदेश_प्रेम #aatamnirbharbharat #आत्मनिर्भरभारत #आत्मनिर्भर #in..</p>
             <form action="" method="post">
+              {% csrf_token %}
               <input type="email" name="email"><input type="submit" value="Subscribe">
+                {{form.Subscribe}}
             </form>
 
           </div>
@@ -195,6 +198,7 @@
       </div>
     </div>
   </footer><!-- End Footer -->
+
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 

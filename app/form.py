@@ -9,10 +9,10 @@ from .models import subscribe
 
 class Reg(forms.ModelForm):
     # forms.ModelForm
-    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
-    birth_date = forms.DateField(help_text='Required. Format: YYYY-MM-DD')
-    password = forms.CharField(widget=forms.PasswordInput)
-    confirm_password = forms.CharField(widget=forms.PasswordInput)
+    # email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
+    # birth_date = forms.DateField(help_text='Required. Format: YYYY-MM-DD')
+    # password = forms.CharField(widget=forms.PasswordInput)
+    # confirm_password = forms.CharField(widget=forms.PasswordInput)
     class Meta:
         model = registartion
         fields = ['email', 'username', 'password', 'confirm_password','birth_date','gender','phone_number']
