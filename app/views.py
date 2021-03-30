@@ -3,7 +3,7 @@ from .form import Reg
 from django.contrib import messages
 from django.contrib .auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .models import registartion
+from app.models import registartion
 from django.contrib.auth.hashers import make_password,check_password
 
 
