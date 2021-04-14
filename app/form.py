@@ -2,8 +2,6 @@ from django.forms import ModelForm, fields
 from django import forms
 # from django .contrib.auth.models import User
 from .models import registartion
-from .models import login
-from .models import forgot
 from .models import contact
 from .models import subscribe
 
@@ -17,15 +15,15 @@ class Reg(forms.ModelForm):
         model = registartion
         fields = ['email', 'username', 'password', 'confirm_password','birth_date','gender','phone_number']
 
-class Log(forms.ModelForm):
+""" class Log(forms.ModelForm):
     class Meta:
         model = login
-        fields = ['email', 'username', 'password']
+        fields = ['email', 'username', 'password'] """
         
-class Forgot(forms.ModelForm):
+""" class Forgot(forms.ModelForm):
     class Meta:
         model = forgot
-        fields = ['email']
+        fields = ['email'] """
 
 class Contact(forms.ModelForm):
     class meta:
